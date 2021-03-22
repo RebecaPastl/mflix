@@ -16,10 +16,10 @@ connection.once('open', ()=>{
 });
 
 app.get('/movies', (req, res) => {
-    
-    console.log('deu certo')
 
     //search all movies
+    //when running the app, visualize it on localhost:8080
+    //do not work on vsc live server
     connection
     .collection("movies")
     .find({}, {projection: {title:1,genres:1,poster:1,year:1}})
@@ -32,7 +32,5 @@ app.get('/movies', (req, res) => {
         res.status(200).send(moviesList);
 
     })
-
-    
      
 });

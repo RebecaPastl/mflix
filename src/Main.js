@@ -29,7 +29,7 @@ class Main extends React.Component {
     }
     
     allMovies(event){
-        
+
         //all movies
         axios.get('/movies')
         .then(moviesList=> {
