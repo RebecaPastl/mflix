@@ -109,11 +109,11 @@ class Main extends React.Component {
         return <>
             <div style={{minHeight:"60vh"}}>
                 <div className="container-sm text-center mt-4">
-                    <Button variant="secondary" className="m-1" onClick={this.showNone} block>Home</Button>
-                    <Button variant="secondary" className="m-1" onClick={this.showAll} block>Display All</Button>    
-                    <Button variant="secondary" className="m-1" onClick={this.showGenre} block>Search by Genre</Button>   
+                    <Button variant="secondary" className="button m-1" onClick={this.showNone} block>Home</Button>
+                    <Button variant="secondary" className="button m-1" onClick={this.showAll} block>Display All</Button>    
+                    <Button variant="secondary" className="button m-1" onClick={this.showGenre} block>Search by Genre</Button>   
                 </div>
-                <p>Choose one option to access the movie database.</p>
+                <p className="start-sentence">Choose one option to access the movie database.</p>
                 <div style={allHidden}>
                     <p>Display all movies</p>
                     <Button variant="secondary" className="m-1" onClick={this.allMovies}>Display All</Button> 
@@ -122,8 +122,8 @@ class Main extends React.Component {
                         {this.state.movies.slice(0).reverse().map((movie, index) => 
 
                             <>
-                                <div className='mt-4'>
-                                    <Image className='w-50' key={index} src={movie.poster} alt={movie.title} fluid />
+                                <div className='div-image mt-4'>
+                                    <Image className='image w-50' key={index} src={movie.poster} alt={movie.title} fluid />
                                     <h4>{movie.title}</h4>
                                 </div>
                             </>
