@@ -2012,7 +2012,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "html {\r\n    font-family: Montserrat, sans-serif;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    }\r\n\r\n    .start-sentence{\r\n        margin: 50px;\r\n    }\r\n\r\n    .div-image{\r\n        display: inline-block;\r\n        height: 400px;\r\n        width: 400px;\r\n    }\r\n\r\n    .image{\r\n        max-height: 100%;\r\n        width: auto;\r\n    }\r\n}", ""]);
+exports.push([module.i, "html {\r\n    font-family: Montserrat, sans-serif;\r\n}\r\n\r\n.footer{\r\n    clear: both;\r\n}\r\n\r\n\r\n.main-wrapper{\r\n    min-height: 70vh;\r\n    margin: 0 auto;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .main-wrapper{\r\n        min-height: 35vh;\r\n        width: 90vw;\r\n    }\r\n\r\n    .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    }\r\n\r\n    .start-sentence{\r\n        margin: 50px;\r\n    }\r\n\r\n    .div-image{\r\n        display: inline-block;\r\n        height: 400px;\r\n        width: 400px;\r\n    }\r\n\r\n    .image{\r\n        max-height: 100%;\r\n        width: auto;\r\n    }\r\n\r\n    .genre-buttons{\r\n        float: left;\r\n        width: 20vw;\r\n    }\r\n\r\n    .genre-results{\r\n        float: right;\r\n        width: 70vw;\r\n    }\r\n}", ""]);
 
 
 /***/ }),
@@ -3346,6 +3346,61 @@ react__WEBPACK_IMPORTED_MODULE_3___default.a.forwardRef(function (_ref, ref) {
 Button.displayName = 'Button';
 Button.defaultProps = defaultProps;
 /* harmony default export */ __webpack_exports__["default"] = (Button);
+
+/***/ }),
+
+/***/ "./node_modules/react-bootstrap/esm/ButtonGroup.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ButtonGroup.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
+
+
+
+
+
+var defaultProps = {
+  vertical: false,
+  toggle: false,
+  role: 'group'
+};
+var ButtonGroup =
+/*#__PURE__*/
+react__WEBPACK_IMPORTED_MODULE_3___default.a.forwardRef(function (_ref, ref) {
+  var bsPrefix = _ref.bsPrefix,
+      size = _ref.size,
+      toggle = _ref.toggle,
+      vertical = _ref.vertical,
+      className = _ref.className,
+      _ref$as = _ref.as,
+      Component = _ref$as === void 0 ? 'div' : _ref$as,
+      rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["bsPrefix", "size", "toggle", "vertical", "className", "as"]);
+
+  var prefix = Object(_ThemeProvider__WEBPACK_IMPORTED_MODULE_4__["useBootstrapPrefix"])(bsPrefix, 'btn-group');
+  var baseClass = prefix;
+  if (vertical) baseClass = prefix + "-vertical";
+  return (
+    /*#__PURE__*/
+    react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, rest, {
+      ref: ref,
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, baseClass, size && prefix + "-" + size, toggle && prefix + "-toggle")
+    }))
+  );
+});
+ButtonGroup.displayName = 'ButtonGroup';
+ButtonGroup.defaultProps = defaultProps;
+/* harmony default export */ __webpack_exports__["default"] = (ButtonGroup);
 
 /***/ }),
 
@@ -12974,7 +13029,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.js */ "./src/Header.js");
 /* harmony import */ var _Footer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Footer.js */ "./src/Footer.js");
 /* harmony import */ var _Main_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Main.js */ "./src/Main.js");
-/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12999,7 +13053,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
  //the App class extends the component class
 
 var App =
@@ -13007,20 +13060,45 @@ var App =
 function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  //store a state that will be used by more than one child component 
+  function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
-  }
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      //stores all movies to pass as props to the children
+      genres: []
+    };
+    return _this;
+  } //method that is called only after the prop and states have been updated
+
 
   _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      //all genres
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/genres').then(function (genresList) {
+        _this2.setState({
+          genres: genresList.data
+        });
+      })["catch"](function (error) {
+        return console.log(error);
+      });
+    } //render method is how we create what is seen in the screen
+
+  }, {
     key: "render",
-    //render method is how we create what is seen in the screen
     value: function render() {
       //render the main components
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bg-dark text-white p-3 text-center"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Main_js__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer_js__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header_js__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Main_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        genresList: this.state.genres
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer_js__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
     }
   }]);
 
@@ -13080,7 +13158,7 @@ function (_React$Component) {
     value: function render() {
       //render footer
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-        className: "text-muted mt-0"
+        className: "footer text-muted mt-0"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-muted mb-0 mt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -13214,9 +13292,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Image */ "./node_modules/react-bootstrap/esm/Image.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/ButtonGroup */ "./node_modules/react-bootstrap/esm/ButtonGroup.js");
+/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Image */ "./node_modules/react-bootstrap/esm/Image.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13237,6 +13316,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 //imports
 //when in the client side, use import syntax
+
 
 
 
@@ -13277,7 +13357,7 @@ function (_React$Component) {
       var _this2 = this;
 
       //all movies
-      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/movies').then(function (moviesList) {
+      axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('/movies').then(function (moviesList) {
         var newMovieList = moviesList.data;
         newMovieList.slice(0).reverse().map(function (movie) {
           if (movie.hasOwnProperty("poster") == false) {
@@ -13331,9 +13411,7 @@ function (_React$Component) {
       }; //render main
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: {
-          minHeight: "60vh"
-        }
+        className: "main-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-sm text-center mt-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -13362,7 +13440,7 @@ function (_React$Component) {
       }, "Display All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.movies.slice(0).reverse().map(function (movie, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "div-image mt-4"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_3__["default"], {
           className: "image w-50",
           key: index,
           src: movie.poster,
@@ -13371,7 +13449,18 @@ function (_React$Component) {
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, movie.title)));
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: genreHidden
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Search for a movie by genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "genre-buttons float-left"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Choose the genres:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        vertical: true
+      }, this.props.genresList.slice(0).map(function (genre, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: index,
+          variant: "secondary"
+        }, genre));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "genre-results float-right bg-primary"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Search for a movie by genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
         variant: "secondary",
         className: "m-1"
       }, "Search by Genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Result 2")))));

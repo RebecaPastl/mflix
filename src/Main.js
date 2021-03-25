@@ -2,6 +2,7 @@
 //when in the client side, use import syntax
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
 
@@ -107,7 +108,7 @@ class Main extends React.Component {
         
         //render main
         return <>
-            <div style={{minHeight:"60vh"}}>
+            <div className='main-wrapper'>
                 <div className="container-sm text-center mt-4">
                     <Button variant="secondary" className="button m-1" onClick={this.showNone} block>Home</Button>
                     <Button variant="secondary" className="button m-1" onClick={this.showAll} block>Display All</Button>    
@@ -132,9 +133,22 @@ class Main extends React.Component {
                     </div>
                 </div>
                 <div style={genreHidden}>
-                    <p>Search for a movie by genre</p>
-                    <div></div>
-                        <div>
+                    
+                    <div className='genre-buttons float-left'>
+                        <p>Choose the genres:</p>
+                        <ButtonGroup vertical>
+                            {this.props.genresList.slice(0).map((genre, index) => 
+
+                                <>
+                                    <Button key={index} variant="secondary">{genre}</Button>
+                                    
+                                </>
+
+                            )}
+                        </ButtonGroup>
+                    </div>
+                    <div className='genre-results float-right'>
+                        <p>Search for a movie by genre</p>
                         <Button variant="secondary" className="m-1">Search by Genre</Button> 
                         <div>Result 2</div>
                     </div>
