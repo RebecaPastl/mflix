@@ -2012,7 +2012,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "html {\r\n    font-family: Montserrat, sans-serif;\r\n}", ""]);
+exports.push([module.i, "html {\r\n    font-family: Montserrat, sans-serif;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    }\r\n\r\n    .start-sentence{\r\n        margin: 50px;\r\n    }\r\n\r\n    .div-image{\r\n        display: inline-block;\r\n        height: 400px;\r\n        width: 400px;\r\n    }\r\n\r\n    .image{\r\n        max-height: 100%;\r\n        width: auto;\r\n    }\r\n}", ""]);
 
 
 /***/ }),
@@ -13185,7 +13185,7 @@ function (_React$Component) {
         src: "./images/banner.png",
         alt: "MFLIX Banner"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].ImgOverlay, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Title, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-        className: "text-dark opacity-4"
+        className: "header-h2 text-dark opacity-4"
       }, "MFLIX")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
         className: "text-right"
       }, "Photo by Skitterphoto from ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -13338,20 +13338,22 @@ function (_React$Component) {
         className: "container-sm text-center mt-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
         variant: "secondary",
-        className: "m-1",
+        className: "button m-1",
         onClick: this.showNone,
         block: true
       }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
         variant: "secondary",
-        className: "m-1",
+        className: "button m-1",
         onClick: this.showAll,
         block: true
       }, "Display All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
         variant: "secondary",
-        className: "m-1",
+        className: "button m-1",
         onClick: this.showGenre,
         block: true
-      }, "Search by Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Choose one option to access the movie database."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Search by Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "start-sentence"
+      }, "Choose one option to access the movie database."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         style: allHidden
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Display all movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
         variant: "secondary",
@@ -13359,9 +13361,9 @@ function (_React$Component) {
         onClick: this.allMovies
       }, "Display All"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.movies.slice(0).reverse().map(function (movie, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "mt-4"
+          className: "div-image mt-4"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          className: "w-50",
+          className: "image w-50",
           key: index,
           src: movie.poster,
           alt: movie.title,

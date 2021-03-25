@@ -14,7 +14,7 @@ class Header extends React.Component {
                 <Card className="bg-dark text-white">
                     <Card.Img src="./images/banner.png" alt="MFLIX Banner" />
                     <Card.ImgOverlay>
-                        <Card.Title><h2 className='text-dark opacity-4'>MFLIX</h2></Card.Title>
+                        <Card.Title><h2 className='header-h2 text-dark opacity-4'>MFLIX</h2></Card.Title>
                     </Card.ImgOverlay>
                 </Card>
                 <small className='text-right'>Photo by Skitterphoto from <a className='text-muted' href="https://www.pexels.com/photo/abstract-analog-art-camera-390089/">Pexels</a></small>
