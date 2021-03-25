@@ -32,5 +32,24 @@ app.get('/movies', (req, res) => {
         res.status(200).send(moviesList);
 
     })
+    .catch(error=>console.log(error));
+     
+});
+
+app.get('/genres', (req, res) => {
+
+    //get all genres
+    //when running the app, visualize it on localhost:8080
+    //do not work on vsc live server    
+    connection
+    .collection("movies")
+    .distinct("genres")
+    .then(genresList => {
+
+        //send result to component
+        res.status(200).send(genresList);
+
+    })
+    .catch(error=>console.log(error));
      
 });

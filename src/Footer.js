@@ -9,7 +9,7 @@ class Footer extends React.Component {
         //render footer
         return <>
 
-            <footer className='text-muted mt-0'>
+            <footer className='footer text-muted mt-0'>
                 <div className='text-muted mb-0 mt-5'>
                     <a className='mx-1' href='https://www.linkedin.com/in/rebeca-pastl-b4b000116/'>
                         <svg
