@@ -19,7 +19,7 @@ class Navbar extends React.Component {
 
                 <Bar collapseOnSelect className="bg-secondary" variant='dark' expand="lg" fixed='top' >
                     <Bar.Brand>
-                        <NavLink className='text-white mr-3 text-decoration-none' to='/all'>
+                        <NavLink className='text-white mr-3 text-decoration-none' to='/'>
                             <BsFilm /> MFLIX
                         </NavLink>
                     </Bar.Brand>
