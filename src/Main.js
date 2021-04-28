@@ -3,6 +3,7 @@
 import React from 'react';
 import MoviesAll from './MoviesAll.js'
 import MoviesGenre from './MoviesGenre.js'
+import Home from './Home.js'
 import {Switch, Route} from 'react-router-dom'
 
 class Main extends React.Component {
@@ -14,7 +15,7 @@ class Main extends React.Component {
             
             <Switch>
                 <Route path='/' exact >
-                    <MoviesAll/>
+                    <Home />
                 </Route>
                 <Route path='/all'>
                     <MoviesAll />
