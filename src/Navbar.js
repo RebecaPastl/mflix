@@ -17,7 +17,7 @@ class Navbar extends React.Component {
             <>
 
 
-                <Bar collapseOnSelect className="bg-secondary" variant='dark' expand="lg" fixed='top' >
+                <Bar collapseOnSelect className="shadow bg-secondary" variant='dark' expand="lg" fixed='top' >
                     <Bar.Brand>
                         <NavLink className='text-white mr-3 text-decoration-none' to='/'>
                             <BsFilm /> MFLIX
@@ -26,10 +26,10 @@ class Navbar extends React.Component {
                     <Bar.Toggle aria-controls="responsive-navbar-nav" />
                     <Bar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <NavLink className='btn btn-secondary mr-3 p-2 text-decoration-none' to='/all'>
+                            <NavLink className='hover-effect btn btn-secondary mr-3 p-2 text-decoration-none' to='/all'>
                                 All Movies
                             </NavLink>
-                            <NavLink className='btn btn-secondary mr-3 p-2 text-decoration-none' to='/genre'>
+                            <NavLink className='hover-effect btn btn-secondary mr-3 p-2 text-decoration-none' to='/genre'>
                                 Movies by Genre
                             </NavLink>
                         </Nav>

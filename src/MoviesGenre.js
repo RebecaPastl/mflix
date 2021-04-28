@@ -62,7 +62,7 @@ class MoviesGenre extends React.Component {
                     </div>
                     <div className='genre-results float-right'>
                         <p>Search for a movie by genre</p>
-                        <Button variant="secondary" className="m-1">Search by Genre</Button> 
+                        <Button variant="secondary" className="hover-effect shadow m-1">Search by Genre</Button> 
                         <div>Result 2</div>
                     </div>
                 </div>

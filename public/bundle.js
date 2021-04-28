@@ -5419,7 +5419,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "html {\r\n    font-family: Montserrat, sans-serif;\r\n}\r\n\r\n.footer{\r\n    clear: both;\r\n}\r\n\r\n\r\n.main-wrapper{\r\n    min-height: 70vh;\r\n    margin: 0 auto;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .main-wrapper{\r\n        min-height: 35vh;\r\n        width: 90vw;\r\n    }\r\n\r\n    .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    }\r\n\r\n    .start-sentence{\r\n        margin: 50px;\r\n    }\r\n\r\n    .div-image{\r\n        display: inline-block;\r\n        height: 400px;\r\n        width: 400px;\r\n    }\r\n\r\n    .image{\r\n        max-height: 100%;\r\n        width: auto;\r\n    }\r\n\r\n    .genre-buttons{\r\n        float: left;\r\n        width: 20vw;\r\n    }\r\n\r\n    .genre-results{\r\n        float: right;\r\n        width: 70vw;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/* Effects */\r\n\r\n.hover-effect:hover{\r\n    transform: translate(0.1rem, 0.1rem);\r\n    -webkit-transform: translate(0.1rem, 0.1rem);\r\n    -ms-transform: translate(0.1rem, 0.1rem);\r\n    -o-transform: translate(0.1rem, 0.1rem);\r\n    cursor: pointer;\r\n}\r\n\r\nshadow{\r\n    box-shadow:  0 1rem 3rem 0.175rem #000000;\r\n}\r\n\r\n/* Sessions */\r\n\r\nhtml {\r\n    font-family: Montserrat, sans-serif;\r\n    font-size: 16px;\r\n}\r\n\r\n.footer{\r\n    clear: both;\r\n}\r\n\r\n.main-wrapper{\r\n    min-height: 70vh;\r\n    margin: 0 auto;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .main-wrapper{\r\n        min-height: 35vh;\r\n        width: 90vw;\r\n    }\r\n\r\n    .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    }\r\n\r\n    .start-sentence{\r\n        margin: 50px;\r\n    }\r\n\r\n    .genre-buttons{\r\n        float: left;\r\n        width: 20vw;\r\n    }\r\n\r\n    .genre-results{\r\n        float: right;\r\n        width: 70vw;\r\n    }\r\n}", ""]);
 
 
 /***/ }),
@@ -46981,7 +46981,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "display-3 mt-3"
       }, "Featured movie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        className: "rounded mx-auto d-block",
+        className: "hover-effect shadow rounded mx-auto d-block",
         bg: "secondary",
         style: {
           width: '18rem'
@@ -47088,7 +47088,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Image */ "./node_modules/react-bootstrap/esm/Image.js");
+/* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Card */ "./node_modules/react-bootstrap/esm/Card.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47160,16 +47160,21 @@ function (_React$Component) {
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.movies.slice(0).reverse().map(function (movie, index) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "div-image mt-4"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          className: "image w-50",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-columns"
+      }, this.state.movies.slice(0).reverse().map(function (movie, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: index,
+          className: "hover-effect shadow rounded my-5 mx-auto",
+          bg: "secondary",
+          style: {
+            width: '18rem'
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"].Img, {
+          variant: "top",
           src: movie.poster,
-          alt: movie.title,
-          fluid: true
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, movie.title)));
+          alt: movie.title
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"].Title, null, movie.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"].Text, null, "(", movie.year, ")"))));
       }))));
     }
   }]);
@@ -47275,7 +47280,7 @@ function (_React$Component) {
         className: "genre-results float-right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Search for a movie by genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
         variant: "secondary",
-        className: "m-1"
+        className: "hover-effect shadow m-1"
       }, "Search by Genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Result 2"))));
     }
   }]);
@@ -47343,7 +47348,7 @@ function (_React$Component) {
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
         collapseOnSelect: true,
-        className: "bg-secondary",
+        className: "shadow bg-secondary",
         variant: "dark",
         expand: "lg",
         fixed: "top"
@@ -47357,10 +47362,10 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
         className: "mr-auto"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        className: "btn btn-secondary mr-3 p-2 text-decoration-none",
+        className: "hover-effect btn btn-secondary mr-3 p-2 text-decoration-none",
         to: "/all"
       }, "All Movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
-        className: "btn btn-secondary mr-3 p-2 text-decoration-none",
+        className: "hover-effect btn btn-secondary mr-3 p-2 text-decoration-none",
         to: "/genre"
       }, "Movies by Genre")))));
     }
