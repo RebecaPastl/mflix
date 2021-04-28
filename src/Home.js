@@ -58,7 +58,7 @@ class Home extends React.Component {
             <React.Fragment>
                 <div className='main-wrapper'>
                     <h1 className='display-3 mt-3'>Featured movie</h1>
-                    <Card className="rounded mx-auto d-block" bg='secondary' style={{ width: '18rem' }}>
+                    <Card className="hover-effect shadow rounded mx-auto d-block" bg='secondary' style={{ width: '18rem' }}>
                         <Card.Img variant='top' src={this.state.randomMovie.poster} alt={this.state.randomMovie.title} />
                             <Card.Body>
                                 <Card.Title>{this.state.randomMovie.title}</Card.Title>

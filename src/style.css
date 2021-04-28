@@ -1,11 +1,27 @@
+/* Effects */
+
+.hover-effect:hover{
+    transform: translate(0.1rem, 0.1rem);
+    -webkit-transform: translate(0.1rem, 0.1rem);
+    -ms-transform: translate(0.1rem, 0.1rem);
+    -o-transform: translate(0.1rem, 0.1rem);
+    cursor: pointer;
+}
+
+shadow{
+    box-shadow:  0 1rem 3rem 0.175rem #000000;
+}
+
+/* Sessions */
+
 html {
     font-family: Montserrat, sans-serif;
+    font-size: 16px;
 }
 
 .footer{
     clear: both;
 }
-
 
 .main-wrapper{
     min-height: 70vh;
@@ -33,17 +49,6 @@ html {
 
     .start-sentence{
         margin: 50px;
-    }
-
-    .div-image{
-        display: inline-block;
-        height: 400px;
-        width: 400px;
-    }
-
-    .image{
-        max-height: 100%;
-        width: auto;
     }
 
     .genre-buttons{
