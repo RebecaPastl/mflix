@@ -10,7 +10,7 @@ class Header extends React.Component {
         //render header
         return <>
             
-            <header>
+            <header className='mt-5'>
                 <Card className="bg-dark text-white">
                     <Card.Img src="./images/banner.png" alt="MFLIX Banner" />
                     <Card.ImgOverlay>
