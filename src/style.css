@@ -19,10 +19,6 @@ html {
     font-size: 16px;
 }
 
-.footer{
-    clear: both;
-}
-
 .main-wrapper{
     min-height: 70vh;
     margin: 0 auto;
@@ -42,14 +38,14 @@ html {
         width: 90vw;
     }
 
-    .button{
+    /* .button{
         display: inline-block;
         width: 150px;
-    }
+    } */
 
-    .start-sentence{
+    /* .start-sentence{
         margin: 50px;
-    }
+    } */
 
     .genre-buttons{
         float: left;
