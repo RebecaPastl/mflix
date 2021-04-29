@@ -19,11 +19,11 @@ class App extends React.Component {
             <React.Fragment>
                 <BrowserRouter>
                     <Navbar />
-                    <div className='bg-dark text-white p-3 text-center'>
+                    <div className='bg-dark text-white pb-5 p-3 text-center'>
                         <Header />
                         <Main />
-                        <Footer />
                     </div>
+                    <Footer />
                 </BrowserRouter>
 
             </React.Fragment>
