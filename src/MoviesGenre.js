@@ -5,6 +5,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Badge from 'react-bootstrap/Badge';
+import Card from 'react-bootstrap/Card'
 
 class MoviesGenre extends React.Component {
 
@@ -17,8 +18,9 @@ class MoviesGenre extends React.Component {
                         
             //stores all genres to pass as props to the children
             genres:[ ],
-            checked:false,
-            chosenGenres:[]
+            chosenGenres:[ ],
+            returnMovies:[ ],
+            errorMessage:''
          
         }
 
@@ -48,8 +50,6 @@ class MoviesGenre extends React.Component {
     handleCheck(e){
 
         e.preventDefault();
- 
-        console.log('ji')
 
         //get the list of genres already chosen
         let chosenGenres = this.state.chosenGenres
@@ -89,7 +89,49 @@ class MoviesGenre extends React.Component {
 
         e.preventDefault();
 
-        console.log('click')
+        let message = ''
+
+        let genres = this.state.chosenGenres
+
+        let moviesList = []
+
+        if (genres.length == 0){ 
+            message = 'You need to choose a genre.' 
+            this.setState({errorMessage:message})
+        }
+
+        genres.forEach(genre => {
+            
+            //get movies by genre
+            axios.get(`/movie/${genre}`)
+            //if there is no error
+            .then(movies => {
+
+                //convert movie into an array of information
+                let arrayMovies = Object.values(movies.data)
+
+                //iterate through the array of movies found for this one genre
+                arrayMovies.forEach(movie => {
+                    
+                    let index = moviesList.indexOf(movie)
+                    //check if the movie is already listed into the list of movies to display
+                    //if it is not, push it to the list
+                    if(index === -1){
+                        moviesList.push(movie);
+                    }
+
+                })
+
+                //update states with list of movies returned for all genres
+                this.setState({returnMovies:moviesList})
+
+                
+            })
+            //if there are errors
+            .catch(error=>console.log(error));
+
+        });
+       
     }
 
 
@@ -132,31 +174,33 @@ class MoviesGenre extends React.Component {
                             )}
                                
                         </div>
-                        <Form.Label>Look for:</Form.Label> 
+                        <Form.Label className='h3 m-2'>Look for:</Form.Label> 
                         <div>
                             {this.state.chosenGenres.slice(0).map((chosen, index) => 
-
                                 <>        
-                                    
                                     <Badge variant="secondary" className='m-1' key={index}>{chosen}</Badge>
-
                                 </>
-
                             )}
                         </div>
-
-
                         <Button type='submit' variant="secondary" className="hover-effect shadow m-1 mt-3" >Search by Genre</Button> 
                     </Form>
-                        <div>Result 2</div>
+                    <p class="font-italic font-weight-light h3 m-2">{this.state.errorMessage}</p>
+                    <div className='card-columns'>
+                        {this.state.returnMovies.slice(0).reverse().map((movie, index) => 
+                            <>
+                                <Card key={index} className="hover-effect shadow rounded my-5 mx-auto" bg='secondary' style={{ width: '18rem' }}>
+                                    <Card.Img variant='top' src={movie.poster} alt={movie.title} />
+                                    <Card.Body>
+                                        <Card.Title>{movie.title}</Card.Title>
+                                        <Card.Text>
+                                            ({movie.year})
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </>
 
-
-
-
-                
-
-
-
+                        )}
+                    </div>
                 </div>
             </React.Fragment> 
             

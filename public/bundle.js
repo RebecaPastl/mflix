@@ -47202,6 +47202,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
 /* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
 /* harmony import */ var react_bootstrap_Badge__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Badge */ "./node_modules/react-bootstrap/esm/Badge.js");
+/* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Card */ "./node_modules/react-bootstrap/esm/Card.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47228,6 +47229,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var MoviesGenre =
 /*#__PURE__*/
 function (_React$Component) {
@@ -47243,8 +47245,9 @@ function (_React$Component) {
     _this.state = {
       //stores all genres to pass as props to the children
       genres: [],
-      checked: false,
-      chosenGenres: []
+      chosenGenres: [],
+      returnMovies: [],
+      errorMessage: ''
     };
     _this.handleCheck = _this.handleCheck.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -47269,8 +47272,7 @@ function (_React$Component) {
   }, {
     key: "handleCheck",
     value: function handleCheck(e) {
-      e.preventDefault();
-      console.log('ji'); //get the list of genres already chosen
+      e.preventDefault(); //get the list of genres already chosen
 
       var chosenGenres = this.state.chosenGenres; //get the element being clicked
 
@@ -47299,13 +47301,49 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      console.log('click');
+      var message = '';
+      var genres = this.state.chosenGenres;
+      var moviesList = [];
+
+      if (genres.length == 0) {
+        message = 'You need to choose a genre.';
+        this.setState({
+          errorMessage: message
+        });
+      }
+
+      genres.forEach(function (genre) {
+        //get movies by genre
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/movie/".concat(genre)) //if there is no error
+        .then(function (movies) {
+          //convert movie into an array of information
+          var arrayMovies = Object.values(movies.data); //iterate through the array of movies found for this one genre
+
+          arrayMovies.forEach(function (movie) {
+            var index = moviesList.indexOf(movie); //check if the movie is already listed into the list of movies to display
+            //if it is not, push it to the list
+
+            if (index === -1) {
+              moviesList.push(movie);
+            }
+          }); //update states with list of movies returned for all genres
+
+          _this3.setState({
+            returnMovies: moviesList
+          });
+        }) //if there are errors
+        ["catch"](function (error) {
+          return console.log(error);
+        });
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -47325,9 +47363,11 @@ function (_React$Component) {
           type: "checkbox",
           name: genre,
           value: genre,
-          onChange: _this3.handleCheck
+          onChange: _this4.handleCheck
         }), genre));
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Look for:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.chosenGenres.slice(0).map(function (chosen, index) {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, {
+        className: "h3 m-2"
+      }, "Look for:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.chosenGenres.slice(0).map(function (chosen, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Badge__WEBPACK_IMPORTED_MODULE_4__["default"], {
           variant: "secondary",
           className: "m-1",
@@ -47337,7 +47377,24 @@ function (_React$Component) {
         type: "submit",
         variant: "secondary",
         className: "hover-effect shadow m-1 mt-3"
-      }, "Search by Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Result 2")));
+      }, "Search by Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        "class": "font-italic font-weight-light h3 m-2"
+      }, this.state.errorMessage), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-columns"
+      }, this.state.returnMovies.slice(0).reverse().map(function (movie, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          key: index,
+          className: "hover-effect shadow rounded my-5 mx-auto",
+          bg: "secondary",
+          style: {
+            width: '18rem'
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_5__["default"].Img, {
+          variant: "top",
+          src: movie.poster,
+          alt: movie.title
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_5__["default"].Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_5__["default"].Title, null, movie.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_5__["default"].Text, null, "(", movie.year, ")"))));
+      }))));
     }
   }]);
 
