@@ -46868,18 +46868,20 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
         className: "mt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        className: "bg-dark text-white"
+        className: "bg-dark text-white "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Img, {
         src: "./images/banner.png",
         alt: "MFLIX Banner"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].ImgOverlay, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Title, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "header-h2 text-dark opacity-4"
-      }, "MFLIX")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-        className: "text-right"
+      }, "MFLIX"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].ImgOverlay, {
+        className: "d-flex flex-column justify-content-end"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Text, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "mb-0 small text-right"
       }, "Photo by Skitterphoto from ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "text-muted",
         href: "https://www.pexels.com/photo/abstract-analog-art-camera-390089/"
-      }, "Pexels"))));
+      }, "Pexels")))))));
     }
   }]);
 
