@@ -23,7 +23,7 @@ app.get('/movies', (req, res) => {
     connection
     .collection("movies")
     .find({}, {projection: {title:1,genres:1,poster:1,year:1}})
-    .limit(30)
+    .limit(50)
     .toArray()
     .then(moviesList => {
         console.log("Os livros voltaram")
@@ -34,6 +34,27 @@ app.get('/movies', (req, res) => {
     })
     .catch(error=>console.log(error));
      
+});
+
+
+app.get('/movie/:genres', (req, res) => {
+
+    let genre = req.params.genres
+
+    //search movies with the genres sent by the components
+    connection
+    .collection("movies")
+    .find({'genres': genre }, {projection: {title:1,genres:1,poster:1,year:1}})
+    .limit(10)
+    .toArray()
+    .then(moviesList => {
+
+        //send result to component
+        res.status(200).send(moviesList);
+
+    })
+    .catch(error=>console.log(error));
+    
 });
 
 app.get('/genres', (req, res) => {

@@ -60,14 +60,13 @@ class Home extends React.Component {
                     <h1 className='display-3 mt-3'>Featured movie</h1>
                     <Card className="hover-effect shadow rounded mx-auto d-block" bg='secondary' style={{ width: '18rem' }}>
                         <Card.Img variant='top' src={this.state.randomMovie.poster} alt={this.state.randomMovie.title} />
-                            <Card.Body>
-                                <Card.Title>{this.state.randomMovie.title}</Card.Title>
-                                <Card.Text>
-                                    ({this.state.randomMovie.year})
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-
+                        <Card.Body>
+                            <Card.Title>{this.state.randomMovie.title}</Card.Title>
+                            <Card.Text>
+                                ({this.state.randomMovie.year})
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                 </div>
             </React.Fragment> 
             
