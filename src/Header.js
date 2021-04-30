@@ -15,7 +15,7 @@ class Header extends React.Component {
                     <Card.Img src="./images/banner.png" alt="MFLIX Banner" />
                     <Card.ImgOverlay>
                         <Card.Title>
-                            <h2 className='header-h2 text-dark opacity-4'>MFLIX</h2>
+                            <h1 className='header-h2 text-dark opacity-4'>MFLIX</h1>
                         </Card.Title>
                         </Card.ImgOverlay>
                         <Card.ImgOverlay className='d-flex flex-column justify-content-end'>
@@ -24,7 +24,6 @@ class Header extends React.Component {
                         </Card.Text>
                     </Card.ImgOverlay>
                 </Card>
-                
             </header>
             
         </>;

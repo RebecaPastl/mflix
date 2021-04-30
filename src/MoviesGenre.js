@@ -96,7 +96,7 @@ class MoviesGenre extends React.Component {
         let moviesList = []
 
         if (genres.length == 0){ 
-            message = 'You need to choose a genre.' 
+            message = 'You need to choose one or more genres.' 
             this.setState({errorMessage:message})
         }
 
@@ -123,7 +123,10 @@ class MoviesGenre extends React.Component {
                 })
 
                 //update states with list of movies returned for all genres
-                this.setState({returnMovies:moviesList})
+                this.setState({
+                    returnMovies:moviesList,
+                    errorMessage:message
+                })
 
                 
             })
@@ -142,9 +145,9 @@ class MoviesGenre extends React.Component {
             
             <React.Fragment>
         
-                <div className='main-wrapper'>            
-                    <Form onSubmit={this.handleSubmit}>
-                        <Form.Label><h1 className='display-3 mt-3'>Choose the genres</h1></Form.Label>       
+                <div className='main-wrapper'>
+                    <h2 className='display-3 my-3'>Choose the genres</h2>            
+                    <Form onSubmit={this.handleSubmit}>      
                         <div className='btn-group-toggle my-2' data-toggle='buttons'>
                             {this.state.genres.slice(0).map((genre, index) => 
 
@@ -184,7 +187,7 @@ class MoviesGenre extends React.Component {
                         </div>
                         <Button type='submit' variant="secondary" className="hover-effect shadow m-1 mt-3" >Search by Genre</Button> 
                     </Form>
-                    <p class="font-italic font-weight-light h3 m-2">{this.state.errorMessage}</p>
+                    <p class="font-italic m-2">{this.state.errorMessage}</p>
                     <div className='card-columns'>
                         {this.state.returnMovies.slice(0).reverse().map((movie, index) => 
                             <>

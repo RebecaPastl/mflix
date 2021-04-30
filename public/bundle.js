@@ -5419,7 +5419,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* Effects */\r\n\r\n.hover-effect:hover{\r\n    transform: translate(0.1rem, 0.1rem);\r\n    -webkit-transform: translate(0.1rem, 0.1rem);\r\n    -ms-transform: translate(0.1rem, 0.1rem);\r\n    -o-transform: translate(0.1rem, 0.1rem);\r\n    cursor: pointer;\r\n}\r\n\r\nshadow{\r\n    box-shadow:  0 1rem 3rem 0.175rem #000000;\r\n}\r\n\r\n/* Sessions */\r\n\r\nhtml {\r\n    font-family: Montserrat, sans-serif;\r\n    font-size: 16px;\r\n}\r\n\r\n.main-wrapper{\r\n    min-height: 70vh;\r\n    margin: 0 auto;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .main-wrapper{\r\n        min-height: 35vh;\r\n        width: 90vw;\r\n    }\r\n\r\n    /* .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    } */\r\n\r\n    /* .start-sentence{\r\n        margin: 50px;\r\n    } */\r\n\r\n    .genre-buttons{\r\n        float: left;\r\n        width: 20vw;\r\n    }\r\n\r\n    .genre-results{\r\n        float: right;\r\n        width: 70vw;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/* Effects */\r\n\r\n.hover-effect:hover{\r\n    transform: translate(0.1rem, 0.1rem);\r\n    -webkit-transform: translate(0.1rem, 0.1rem);\r\n    -ms-transform: translate(0.1rem, 0.1rem);\r\n    -o-transform: translate(0.1rem, 0.1rem);\r\n    cursor: pointer;\r\n}\r\n\r\nshadow{\r\n    box-shadow:  0 1rem 3rem 0.175rem #000000;\r\n}\r\n\r\n/* Sessions */\r\n\r\nhtml {\r\n    font-family: 'Montserrat', 'Helvetica', sans-serif; \r\n    font-weight: 300;\r\n}\r\n\r\nh1, .h1 {\r\nmargin-bottom: 0.5rem;\r\nfont-family: 'Limelight', 'Montserrat', 'Helvetica', sans-serif;\r\nfont-weight: 500;\r\nline-height: 1.2;\r\ncolor: inherit;\r\n}\r\n\r\nh2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {\r\nmargin-bottom: 0.5rem;\r\nfont-family: 'Poiret One', 'Montserrat', 'Helvetica', sans-serif;\r\nfont-weight: 500;\r\nline-height: 1.2;\r\ncolor: inherit;\r\n}\r\n\r\n\r\n.main-wrapper{\r\n    min-height: 70vh;\r\n    margin: 0 auto;\r\n}\r\n\r\n@media only screen and (min-width: 1800px) {\r\n\r\n    .header-h2{\r\n        font-size:200px;\r\n        opacity:75%;\r\n        -ms-transform: translateY(20%);\r\n        transform: translateY(20%);\r\n    }\r\n\r\n    .main-wrapper{\r\n        min-height: 35vh;\r\n        width: 90vw;\r\n    }\r\n\r\n    /* .button{\r\n        display: inline-block;\r\n        width: 150px;\r\n    } */\r\n\r\n    /* .start-sentence{\r\n        margin: 50px;\r\n    } */\r\n\r\n    .genre-buttons{\r\n        float: left;\r\n        width: 20vw;\r\n    }\r\n\r\n    .genre-results{\r\n        float: right;\r\n        width: 70vw;\r\n    }\r\n}", ""]);
 
 
 /***/ }),
@@ -46872,7 +46872,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Img, {
         src: "./images/banner.png",
         alt: "MFLIX Banner"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].ImgOverlay, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Title, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].ImgOverlay, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].Title, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "header-h2 text-dark opacity-4"
       }, "MFLIX"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_1__["default"].ImgOverlay, {
         className: "d-flex flex-column justify-content-end"
@@ -46980,8 +46980,8 @@ function (_React$Component) {
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "display-3 mt-3"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "display-3 my-3"
       }, "Featured movie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
         className: "hover-effect shadow rounded mx-auto d-block",
         bg: "secondary",
@@ -47162,12 +47162,14 @@ function (_React$Component) {
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "display-3 my-3"
+      }, "All movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-columns"
       }, this.state.movies.slice(0).reverse().map(function (movie, index) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: index,
-          className: "hover-effect shadow rounded my-5 mx-auto",
+          className: "hover-effect shadow rounded mb-5 mx-auto",
           bg: "secondary",
           style: {
             width: '18rem'
@@ -47311,7 +47313,7 @@ function (_React$Component) {
       var moviesList = [];
 
       if (genres.length == 0) {
-        message = 'You need to choose a genre.';
+        message = 'You need to choose one or more genres.';
         this.setState({
           errorMessage: message
         });
@@ -47334,7 +47336,8 @@ function (_React$Component) {
           }); //update states with list of movies returned for all genres
 
           _this3.setState({
-            returnMovies: moviesList
+            returnMovies: moviesList,
+            errorMessage: message
           });
         }) //if there are errors
         ["catch"](function (error) {
@@ -47350,11 +47353,11 @@ function (_React$Component) {
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "display-3 my-3"
+      }, "Choose the genres"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "display-3 mt-3"
-      }, "Choose the genres")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group-toggle my-2",
         "data-toggle": "buttons"
       }, this.state.genres.slice(0).map(function (genre, index) {
@@ -47380,7 +47383,7 @@ function (_React$Component) {
         variant: "secondary",
         className: "hover-effect shadow m-1 mt-3"
       }, "Search by Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        "class": "font-italic font-weight-light h3 m-2"
+        "class": "font-italic m-2"
       }, this.state.errorMessage), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-columns"
       }, this.state.returnMovies.slice(0).reverse().map(function (movie, index) {
