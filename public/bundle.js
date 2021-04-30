@@ -47201,6 +47201,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
 /* harmony import */ var react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Form */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_bootstrap_Badge__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Badge */ "./node_modules/react-bootstrap/esm/Badge.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47211,9 +47212,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -47221,6 +47222,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 //imports
 //when in the client side, use import syntax
+
 
 
 
@@ -47240,8 +47242,12 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MoviesGenre).call(this, props));
     _this.state = {
       //stores all genres to pass as props to the children
-      genres: []
+      genres: [],
+      checked: false,
+      chosenGenres: []
     };
+    _this.handleCheck = _this.handleCheck.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   } //method that is called only after the prop and states have been updated
 
@@ -47261,27 +47267,77 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "handleCheck",
+    value: function handleCheck(e) {
+      e.preventDefault();
+      console.log('ji'); //get the list of genres already chosen
+
+      var chosenGenres = this.state.chosenGenres; //get the element being clicked
+
+      var target = e.currentTarget; //get the value of the element being clicked
+
+      var value = target.value; //look for the clicked element in the chosen genres list and get its index
+
+      var index = chosenGenres.indexOf(value);
+      console.log(target.value);
+      console.log(chosenGenres); //check if value of the button is already in the list of chosen genres
+      //if it is not, push it to the list
+
+      if (index === -1) {
+        chosenGenres.push(value); //if it is, take it off the list
+      } else {
+        chosenGenres.splice(index, 1);
+      } //update the chosen genres list
+
+
+      this.setState({
+        chosenGenres: chosenGenres
+      });
+      console.log(chosenGenres);
+      console.log(this.state.chosenGenres);
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      console.log('click');
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       //render header
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-wrapper"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "genre-buttons text-left float-left"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Choose the genres:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        className: "mb-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "display-3 mt-3"
+      }, "Choose the genres")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-group-toggle my-2",
+        "data-toggle": "buttons"
       }, this.state.genres.slice(0).map(function (genre, index) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Check, {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "btn btn-outline-secondary m-1",
+          key: index
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "checkbox",
+          name: genre,
           value: genre,
-          key: index,
-          label: genre
-        }));
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "genre-results float-right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Search for a movie by genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          onChange: _this3.handleCheck
+        }), genre));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_3__["default"].Label, null, "Look for:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.chosenGenres.slice(0).map(function (chosen, index) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Badge__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          variant: "secondary",
+          className: "m-1",
+          key: index
+        }, chosen));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "submit",
         variant: "secondary",
-        className: "hover-effect shadow m-1"
-      }, "Search by Genre"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Result 2"))));
+        className: "hover-effect shadow m-1 mt-3"
+      }, "Search by Genre")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Result 2")));
     }
   }]);
 
