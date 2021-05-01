@@ -15,12 +15,12 @@ class Header extends React.Component {
                     <Card.Img src="./images/banner.png" alt="MFLIX Banner" />
                     <Card.ImgOverlay>
                         <Card.Title>
-                            <h1 className='header-h2 text-dark opacity-4'>MFLIX</h1>
+                            <h1 className='header-h1 text-dark opacity-4'>MFLIX</h1>
                         </Card.Title>
                         </Card.ImgOverlay>
                         <Card.ImgOverlay className='d-flex flex-column justify-content-end'>
                         <Card.Text>
-                            <p className='mb-0 small text-right'>Photo by Skitterphoto from <a className='text-muted' href="https://www.pexels.com/photo/abstract-analog-art-camera-390089/">Pexels</a></p>
+                            <p className='artist mb-0 small text-right'>Photo by Skitterphoto from <a className='text-muted' href="https://www.pexels.com/photo/abstract-analog-art-camera-390089/">Pexels</a></p>
                         </Card.Text>
                     </Card.ImgOverlay>
                 </Card>

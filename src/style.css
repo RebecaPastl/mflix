@@ -42,12 +42,26 @@ line-height: 1.2;
 color: inherit;
 }
 
+.artist{
+    display: none;
+}
+
+.header-h1{
+    font-size:15vw;
+    opacity:75%;
+    -ms-transform: translateY(-5%);
+    transform: translateY(-5%);
+}
 
 @media only screen and (min-width: 1800px) {
 
     .main-wrapper{
         min-height: 35vh;
         width: 90vw;
+    }
+
+    .artist{
+        display: block;
     }
 
 }
