@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const connection = require('./db/connection');
 
@@ -10,7 +11,7 @@ connection.once('open', ()=>{
 
     console.log('connected to db');
 
-        const server = app.listen(process.env.PORT, ()=>{
+        app.listen(process.env.PORT, ()=>{
         console.log(`listening on ${process.env.PORT}`);
     });
 });
@@ -26,7 +27,6 @@ app.get('/movies', (req, res) => {
     .limit(50)
     .toArray()
     .then(moviesList => {
-        console.log("Os livros voltaram")
 
         //send result to component
         res.status(200).send(moviesList);
@@ -73,4 +73,12 @@ app.get('/genres', (req, res) => {
     })
     .catch(error=>console.log(error));
      
+});
+
+//expresse router will interpret all the react router routes (/all and /genre) as routes to the index page
+//where the react router will load the page specified in it's path (/all and /genre)
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '/public/index.html'), function(err) {
+        if (err) { res.status(500).send(err) }
+    });
 });
