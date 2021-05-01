@@ -178,16 +178,18 @@ class MoviesGenre extends React.Component {
                                
                         </div>
                         <Form.Label className='h3 m-2'>Look for:</Form.Label> 
-                        <div>
+                        <h4>
                             {this.state.chosenGenres.slice(0).map((chosen, index) => 
                                 <>        
                                     <Badge variant="secondary" className='m-1' key={index}>{chosen}</Badge>
                                 </>
                             )}
-                        </div>
+                        </h4>
                         <Button type='submit' variant="secondary" className="hover-effect shadow m-1 mt-3" >Search by Genre</Button> 
                     </Form>
+                    
                     <p class="font-italic m-2">{this.state.errorMessage}</p>
+                    
                     <div className='card-columns'>
                         {this.state.returnMovies.slice(0).reverse().map((movie, index) => 
                             <>
