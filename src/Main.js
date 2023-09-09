@@ -8,6 +8,7 @@ import {Switch, Route} from 'react-router-dom'
 function Main() {
 
     const [randomMovie, setRandomMovie] = useState({});
+    const [movies, setMovies] = useState([]);
 
     useEffect(() => {
 
@@ -22,8 +23,9 @@ function Main() {
                 }
             })
         
-            let random = newMovieList[Math.floor(Math.random() * newMovieList.length)];
+            let random = newMovieList[Math.floor(Math.random() * newMovieList.length)]
 
+            setMovies(newMovieList)
             setRandomMovie(random)
         })    
         .catch(error => console.log(error));
@@ -36,7 +38,7 @@ function Main() {
                 <Home randomMovie={randomMovie}/>
             </Route>
             <Route path='/all'>
-                <MoviesAll />
+                <MoviesAll movies={movies}/>
             </Route>
             <Route path='/genre' >
                 <MoviesGenre />
