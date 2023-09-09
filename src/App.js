@@ -9,28 +9,22 @@ import {BrowserRouter} from 'react-router-dom'
 
 
 //the App class extends the component class
-class App extends React.Component {
-    
-    //render method is how we create what is seen in the screen
-    render() {
-        //render the main components
-        return(
+function App() {
+    //render the main components
+    return(
             
-            <React.Fragment>
-                <BrowserRouter>
-                    <Navbar />
-                    <div className='bg-dark text-white pb-5 p-3 text-center'>
-                        <Header />
-                        <Main />
-                    </div>
-                    <Footer />
-                </BrowserRouter>
+        <React.Fragment>
+            <BrowserRouter>
+                <Navbar />
+                <div className='bg-dark text-white pb-5 p-3 text-center'>
+                    <Header />
+                    <Main />
+                </div>
+                <Footer />
+            </BrowserRouter>
 
-            </React.Fragment>
-        );
-        
-    }    
-    
+        </React.Fragment>
+    );     
 }
 
 export default App;
