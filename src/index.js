@@ -1,5 +1,3 @@
-//imports
-//when in the client side, use import syntax
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';

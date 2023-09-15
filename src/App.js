@@ -1,5 +1,4 @@
 //imports
-//when in the client side, use import syntax
 import React from 'react';
 import Header from './Header.js'
 import Footer from './Footer.js'
@@ -7,10 +6,7 @@ import Navbar from './Navbar.js'
 import Main from './Main.js'
 import {BrowserRouter} from 'react-router-dom'
 
-
-//the App class extends the component class
 function App() {
-    //render the main components
     return(
             
         <React.Fragment>
