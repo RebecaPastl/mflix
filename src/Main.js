@@ -41,7 +41,7 @@ function Main() {
                 <MoviesAll movies={movies}/>
             </Route>
             <Route path='/genre' >
-                <MoviesGenre />
+                <MoviesGenre movies={movies}/>
             </Route>
         </Switch>
     );
