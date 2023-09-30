@@ -8,7 +8,9 @@ function Navbar(){
         <Bar collapseOnSelect className="shadow bg-secondary py-0" variant='dark' expand="lg" fixed='top' >
             <Bar.Brand>
                 <NavLink className='text-white mr-3 text-decoration-none' to='/'>
-                    <BsFilm /> <span className='h1 small'>MFLIX</span>
+                    <BsFilm 
+                        role="img"
+                    /> <span className='h1 small'>MFLIX</span>
                 </NavLink>
             </Bar.Brand>
             <Bar.Toggle className='my-2' aria-controls="responsive-navbar-nav" />
